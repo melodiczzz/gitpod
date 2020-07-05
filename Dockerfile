@@ -6,7 +6,7 @@ FROM gitpod/workspace-full-vnc
 #RUN echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" |  tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 #RUN  apt-get update \
 # &&  apt-get install -y mongodb-org
-FROM debian:latest
+#FROM debian:latest
 
 RUN apt-get update \
     && apt-get install -y libgtk-3-dev \	    && apt-get install -y build-essential libgtk-3-dev chromium-browser \
