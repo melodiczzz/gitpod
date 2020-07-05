@@ -14,6 +14,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 USER root
 
 RUN true \
+	&& apt-get update \
 	&& apt install -y \
 		novnc \
 		chromium
