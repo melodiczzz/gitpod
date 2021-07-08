@@ -8,9 +8,12 @@ FROM gitpod/workspace-full-vnc
 # &&  apt-get install -y mongodb-org
 #FROM debian:latest
 
-RUN apt-get update \
-    && apt-get install -y libgtk-3-dev \	    && apt-get install -y build-essential libgtk-3-dev chromium-browser \
-    && apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/* 	    && apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
+USER root
+
+RUN sudo apt-get update \
+    && sudo apt-get install -y libgtk-3-dev \	    && sudo apt-get install -y build-essential libgtk-3-dev chromium-browser \
+    && sudo apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/* 	    && apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
     
 #RUN  mkdir -p /data/db \
 # &&  chown gitpod:gitpod -R /data/db
+USER gitpod
